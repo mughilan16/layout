@@ -1,20 +1,18 @@
 "use client"
 import { Box, Button, Input } from "@mui/material";
 import { useState } from "react";
-import useStore from "@/store/useStore";
 import { useRouter } from "next/navigation";
+import { useLogin } from "@/queries/useUser";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  console.log(username, password);
+  const { mutateAsync: login } = useLogin();
 
-  const signIn = useStore(state => state.signIn);
-
-  const login = () => {
-    if (username !== "" && password !== "") {
-      signIn(username, password)
+  const clickHandler = () => {
+    if (email !== "" && password !== "") {
+      login({ email, password });
       router.push("/");
     };
   }
@@ -37,9 +35,9 @@ export default function Login() {
         flexDirection: "column",
         gap: "0.5rem",
       }}>
-        <label>User Name</label>
+        <label>Email</label>
         <Input
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           sx={{
             fontSize: "18px",
           }} />
@@ -58,7 +56,7 @@ export default function Login() {
       </Box>
       <Button
         variant="contained"
-        onClick={login}
+        onClick={clickHandler}
       >LOGIN</Button>
     </Box>
   </Box>
