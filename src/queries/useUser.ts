@@ -1,4 +1,4 @@
-import { login, User } from "@/api/user";
+import { login, getUser, User } from "@/api/user";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
 function setToken(userToken: string) {
@@ -19,6 +19,7 @@ export function useUser() {
       if (token === undefined) {
         return undefined;
       }
+      return getUser();
     },
   })
 }
