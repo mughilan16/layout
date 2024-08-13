@@ -3,6 +3,7 @@ import axiosInstance from "./config"
 export type User = {
   token: string,
   user: {
+    user_id: number,
     user_name: string,
   },
   profileSetting: {
@@ -31,9 +32,7 @@ export const googleLogin = async (req: { email: string, password: string }) => {
     .then(res => res.data.data)
 }
 
-export const getUser = async (req: { token: string }) => {
-  return axiosInstance.post<Data>("token", {
-    token: req.token,
-  })
-    .then(res => res.data.data)
+export const getUser = async (req: { token: string, userId: string }) => {
+  return axiosInstance.get<User>(`user-popover-info/${req.userId}`)
+    .then(res => { console.log(res.data); return res.data })
 }

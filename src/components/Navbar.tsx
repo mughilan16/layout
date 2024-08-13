@@ -3,11 +3,13 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/mater
 import MenuIcon from '@mui/icons-material/Menu';
 import useStore from "@/store/useStore";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/queries/useUser";
 
 export default function NavBar() {
   const toggleSidebar = useStore(state => state.toggleSidebar);
   const router = useRouter();
-  const { isSignedIn, username } = useStore();
+  const { data: user } = useUser();
+  //const { isSignedIn, username } = useStore();
   return (
     <Box>
       <AppBar position="relative" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, height: "60px" }}>
@@ -25,16 +27,18 @@ export default function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          {!isSignedIn &&
+          {user === undefined &&
             <Button
               color="inherit" onClick={() => router.push("/login")}
             >
               Login
             </Button>
           }
-          {isSignedIn &&
+          {user !== undefined &&
             <Box>
-              {username}
+              <Typography>
+                {user.user.user_name}
+              </Typography>
             </Box>
           }
         </Toolbar>
