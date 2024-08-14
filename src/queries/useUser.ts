@@ -19,7 +19,6 @@ export function useLogin() {
     onSuccess(res) {
       setToken(res.token);
       queryClient.setQueriesData<User>("user", (_) => {
-        console.log(res)
         return res;
       })
     },

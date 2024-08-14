@@ -97,7 +97,7 @@ export function SideBar() {
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "0.5rem", padding: "0.5rem" }}>
-          {menus.map(menu => <Item menu={menu} setLink={(link: string) => setLink(link)} />)}
+          {menus.map(menu => <Item menu={menu} key={menu.id} setLink={(link: string) => setLink(link)} />)}
         </Box>
         <Divider />
       </Box>

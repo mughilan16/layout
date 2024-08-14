@@ -37,7 +37,6 @@ export const googleLogin = async (req: { email: string, password: string }) => {
 
 export const getUser = async () => {
   const axiosInstance = getConfig();
-  console.log(axiosInstance);
   if (axiosInstance === undefined) {
     return undefined;
   }
