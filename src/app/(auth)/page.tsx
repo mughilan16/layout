@@ -1,4 +1,5 @@
 "use client"
+import Auth from "@/components/Auth";
 import { useUser } from "@/queries/useUser";
 import { Box, Button } from "@mui/material";
 import { useRouter } from "next/navigation";

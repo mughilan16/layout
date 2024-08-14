@@ -9,11 +9,16 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const { mutateAsync: login } = useLogin();
+  const [isLoginLoading, setIsLoginLoading] = useState(false);
 
   const clickHandler = () => {
+    setIsLoginLoading(true);
     if (email !== "" && password !== "") {
-      login({ email, password });
-      router.push("/");
+      login({ email, password }).then(() => {
+        router.push("/");
+      }).finally(() => {
+        setIsLoginLoading(false);
+      });
     };
   }
 
@@ -38,6 +43,7 @@ export default function Login() {
         <label>Email</label>
         <Input
           onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoginLoading}
           sx={{
             fontSize: "18px",
           }} />
@@ -50,6 +56,7 @@ export default function Login() {
         <label>Password</label>
         <Input
           onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoginLoading}
           sx={{
             fontSize: "18px"
           }} />
@@ -57,7 +64,10 @@ export default function Login() {
       <Button
         variant="contained"
         onClick={clickHandler}
-      >LOGIN</Button>
+        disabled={isLoginLoading}
+      >
+        {isLoginLoading ? "LOADING" : "LOGIN"}
+      </Button>
     </Box>
   </Box>
 }

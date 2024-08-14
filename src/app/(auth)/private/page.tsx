@@ -1,14 +1,12 @@
 "use client"
 import { Box, Divider } from "@mui/material";
 import { useUser } from "@/queries/useUser";
-import { useRouter } from "next/navigation";
+import Auth from "@/components/Auth";
 
 export default function Private() {
   const { data: user, isLoading } = useUser();
-  const router = useRouter();
   if (isLoading) return <>Loading</>
-  console.log(user)
-  if (user === undefined) return router.push("/login")
+  if (user === undefined) return <></>
   return (
     <Box>
       Logged In as : {user.user.user_name}

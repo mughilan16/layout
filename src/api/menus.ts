@@ -1,4 +1,4 @@
-import axiosInstance from "./config"
+import { getConfig } from "./config"
 
 export type Menu = {
   id: number
@@ -21,6 +21,10 @@ export type Menu = {
 }
 
 export const getMenus = async () => {
+  const axiosInstance = getConfig();
+  if (axiosInstance === undefined) {
+    return undefined;
+  }
   return axiosInstance.get("menus")
     .then(res => res.data.data.menus as Array<Menu>)
 }

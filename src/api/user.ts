@@ -1,4 +1,5 @@
-import axiosInstance from "./config"
+import axios from "axios";
+import { getConfig } from "./config";
 
 export type User = {
   token: string,
@@ -16,8 +17,10 @@ type Data = {
   data: User;
 }
 
+const URL = "http://ec2-100-21-24-56.us-west-2.compute.amazonaws.com:8080/antares-backend/public/api/";
+
 export const login = async (req: { email: string, password: string }) => {
-  return axiosInstance.post<Data>("login", {
+  return axios.post<Data>(URL + "login", {
     email: req.email,
     password: req.password
   })
@@ -25,15 +28,19 @@ export const login = async (req: { email: string, password: string }) => {
 }
 
 export const googleLogin = async (req: { email: string, password: string }) => {
-  return axiosInstance.post<Data>("google-login", {
+  return axios.post<Data>(URL + "google-login", {
     email: req.email,
     password: req.password
   })
     .then(res => res.data.data)
 }
 
-export const getUser = async (req: { token: string, userId: string }) => {
-  console.log(req.userId)
-  return axiosInstance.get<User>(`user-popover-info/${req.userId}`)
-    .then(res => { console.log(res.data); return res.data })
+export const getUser = async () => {
+  const axiosInstance = getConfig();
+  console.log(axiosInstance);
+  if (axiosInstance === undefined) {
+    return undefined;
+  }
+  return axiosInstance.get<User>("user-info")
+    .then(res => res.data)
 }

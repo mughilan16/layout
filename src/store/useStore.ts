@@ -13,7 +13,7 @@ type Action = {
 }
 
 const useStore = create<State & Action>(set => ({
-  sidebarOpen: true,
+  sidebarOpen: false,
   username: "",
   password: "",
   isSignedIn: false,

@@ -5,6 +5,7 @@ import { Box, Divider, Drawer, ListItemButton, ListItemIcon, ListItemText, Toolb
 import { Abc, AccountCircle, AudioFile, BackupTable, Balcony, BrowseGallery, Cameraswitch, CurrencyRuble, Description, Elevator, EventSeat, Explicit, Extension, FiberSmartRecord, FileOpen, Folder, FormatUnderlined, Forum, Grade, Grid4x4, Home, Memory, NotificationAdd, Settings, SettingsSuggest, SupervisedUserCircle, ViewQuilt, Widgets } from "@mui/icons-material";
 import { useState } from "react";
 import useStore from "@/store/useStore";
+import { useUser } from "@/queries/useUser";
 
 export const SIDEBAR_WIDTH = "350px";
 
@@ -67,7 +68,13 @@ function buildTree(menus: Menu[]) {
 
   return tree;
 }
-export default function SideBar() {
+
+export default function SideBarWrapper() {
+  const user = useUser();
+  if (user === undefined) return <></>
+  return <SideBar />
+}
+export function SideBar() {
   const [link, setLink] = useState("/");
   const useGetMenus = () => useQuery({
     queryKey: ["menus"],
