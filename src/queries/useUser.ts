@@ -20,7 +20,8 @@ export function useUser() {
     queryKey: ["user"],
     queryFn: () => {
       const token = getToken();
-      if (token.userId === undefined || token.userToken === undefined) {
+      if (!token.userId || !token.userToken) {
+        console.log("not logged in");
         return undefined;
       }
       const user = getUser({ token: token.userToken, userId: token.userId });
@@ -39,6 +40,19 @@ export function useLogin() {
       queryClient.setQueriesData<User>("user", (_) => {
         console.log(res)
         return res;
+      })
+    },
+  })
+}
+
+export function useLogOut() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async () => undefined,
+    onSuccess(_) {
+      setToken("", "");
+      queryClient.setQueriesData<User | undefined>("user", (_) => {
+        return undefined
       })
     },
   })

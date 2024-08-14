@@ -33,6 +33,7 @@ export const googleLogin = async (req: { email: string, password: string }) => {
 }
 
 export const getUser = async (req: { token: string, userId: string }) => {
+  console.log(req.userId)
   return axiosInstance.get<User>(`user-popover-info/${req.userId}`)
     .then(res => { console.log(res.data); return res.data })
 }
