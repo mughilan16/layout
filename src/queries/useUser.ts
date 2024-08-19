@@ -5,10 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 export function useUser() {
   return useQuery({
     queryKey: ["user"],
-    queryFn: () => {
-      const user = getUser();
-      return user;
-    },
+    queryFn: () => getUser(),
   })
 }
 

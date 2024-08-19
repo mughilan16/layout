@@ -6,6 +6,7 @@ import { Abc, AccountCircle, AudioFile, BackupTable, Balcony, BrowseGallery, Cam
 import { useState } from "react";
 import useStore from "@/store/useStore";
 import { useUser } from "@/queries/useUser";
+import { useRouter } from "next/navigation";
 
 export const SIDEBAR_WIDTH = "350px";
 
@@ -107,9 +108,10 @@ export function SideBar() {
 
 
 function Item(props: { menu: Menu, setLink: (link: string) => void }) {
+  const router = useRouter();
   return (
     <Box
-      onClick={() => props.setLink(props.menu.target_url)}
+      onClick={() => router.push("/" + props.menu.menu_name.toLowerCase())}
       sx={{
         display: "flex",
         flexDirection: "column",
