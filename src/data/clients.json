@@ -1,171 +1,213 @@
 [
     {
         "comp_id": 871,
-        "comp_name": "Amazon"
+        "comp_name": "Amazon",
+        "favicon": "Amazon.ico"
     },
     {
         "comp_id": 573,
-        "comp_name": "American University in Cairo Press"
+        "comp_name": "American University in Cairo Press",
+        "favicon": "American University in cario press.png"
     },
     {
         "comp_id": 179,
-        "comp_name": "BERRETT-KOEHLER"
+        "comp_name": "BERRETT-KOEHLER",
+        "favicon": "BERRETT-KOEHLER.ico"
     },
     {
         "comp_id": 539,
-        "comp_name": "Blair"
+        "comp_name": "Blair",
+        "favicon": "Blair.ico"
     },
     {
         "comp_id": 223,
-        "comp_name": "Brookings Institution Press"
+        "comp_name": "Brookings Institution Press",
+        "favicon": "Brookings Institutaion Press.png"
     },
     {
         "comp_id": 453,
-        "comp_name": "Cato Institute"
+        "comp_name": "Cato Institute",
+        "favicon": "Brookings Institutaion Press.png"
     },
     {
         "comp_id": 656,
-        "comp_name": "CEQ Institute"
+        "comp_name": "CEQ Institute",
+        "favicon": "CEQ Institute.jpg"
     },
     {
         "comp_id": 425,
-        "comp_name": "Columbia University Press"
+        "comp_name": "Columbia University Press",
+        "favicon": "Columbia University Press.png"
     },
     {
         "comp_id": 39,
-        "comp_name": "Cornell University Press"
+        "comp_name": "Cornell University Press",
+        "favicon": "Cornell University Press.png"
     },
     {
         "comp_id": 298,
-        "comp_name": "CSIS"
+        "comp_name": "CSIS",
+        "favicon": "CSIS.ico"
     },
     {
         "comp_id": 155,
-        "comp_name": "Duke University Press"
+        "comp_name": "Duke University Press",
+        "favicon": "Duke University Press.png"
     },
     {
         "comp_id": 520,
-        "comp_name": "Grove Atlantic"
+        "comp_name": "Grove Atlantic",
+        "favicon": "Grove Atlantic.ico"
     },
     {
         "comp_id": 465,
-        "comp_name": "Harvard Asia"
+        "comp_name": "Harvard Asia",
+        "favicon": "Harvard Asia.png"
     },
     {
         "comp_id": 122,
-        "comp_name": "Harvard University Press"
+        "comp_name": "Harvard University Press",
+        "favicon": "Harvard University Press.ico"
     },
     {
         "comp_id": 527,
-        "comp_name": "Health Administration Press"
+        "comp_name": "Health Administration Press",
+        "favicon": "Health Administration Press.png"
     },
     {
         "comp_id": 759,
-        "comp_name": "Hong Kong University Press"
+        "comp_name": "Hong Kong University Press",
+        "favicon": "Hong Kong University Press.png"
     },
     {
         "comp_id": 196,
-        "comp_name": "Johns Hopkins University Press"
+        "comp_name": "Johns Hopkins University Press",
+        "favicon": "Johns Hopkins University Press.ico"
     },
     {
         "comp_id": 250,
-        "comp_name": "Lincoln Institute"
+        "comp_name": "Lincoln Institute",
+        "favicon": "Lincoln Institute.ico"
     },
     {
         "comp_id": 272,
-        "comp_name": "Longleaf"
+        "comp_name": "Longleaf",
+        "favicon": "Longleaf.png"
     },
     {
         "comp_id": 123,
-        "comp_name": "Mercatus"
+        "comp_name": "Mercatus",
+        "favicon": "Mercatus.ico"
     },
     {
         "comp_id": 203,
-        "comp_name": "MIT Press"
+        "comp_name": "MIT Press",
+        "favicon": "MIT Press.png"
     },
     {
         "comp_id": 181,
-        "comp_name": "Modern Language Association"
+        "comp_name": "Modern Language Association",
+        "favicon": "Modern Language Association.png"
     },
     {
         "comp_id": 560,
-        "comp_name": "National Academies Press"
+        "comp_name": "National Academies Press",
+        "favicon": "National Academies Press.png"
     },
     {
         "comp_id": 876,
-        "comp_name": "NATO Joint Analysis and Lessons Learned Centre"
+        "comp_name": "NATO Joint Analysis and Lessons Learned Centre",
+        "favicon": "NATO Joint Analysis and Lessons Learned Centre.png"
     },
     {
         "comp_id": 640,
-        "comp_name": "Paragon Health Institute"
+        "comp_name": "Paragon Health Institute",
+        "favicon": "Paragon Health Institute.webp"
     },
     {
         "comp_id": 107,
-        "comp_name": "Princeton University Press"
+        "comp_name": "Princeton University Press",
+        "favicon": "Princeton University Press.ico"
     },
     {
         "comp_id": 130,
-        "comp_name": "Rutgers University Press"
+        "comp_name": "Rutgers University Press",
+        "favicon": "Rutgers University Press.png"
     },
     {
         "comp_id": 513,
-        "comp_name": "Scholastic"
+        "comp_name": "Scholastic",
+        "favicon": "Scholastic.png"
     },
     {
         "comp_id": 618,
-        "comp_name": "Scientific Societies"
+        "comp_name": "Scientific Societies",
+        "favicon": "Scientific Societies.png"
     },
     {
         "comp_id": 734,
-        "comp_name": "Smithsonian Scholarly Press"
+        "comp_name": "Smithsonian Scholarly Press",
+        "favicon": "Smithsonian Scholarly Press.ico"
     },
     {
         "comp_id": 571,
-        "comp_name": "Templeton Press"
+        "comp_name": "Templeton Press",
+        "favicon": "Templeton Press.png"
     },
     {
         "comp_id": 455,
-        "comp_name": "Texas A&M"
+        "comp_name": "Texas A&M",
+        "favicon": "Texas A&M.png"
     },
     {
         "comp_id": 504,
-        "comp_name": "University of Arkansas"
+        "comp_name": "University of Arkansas",
+        "favicon": "University of Arkansas.png"
     },
     {
         "comp_id": 184,
-        "comp_name": "University of Hawaii Press"
+        "comp_name": "University of Hawaii Press",
+        "favicon": "University of Hawaii Press.png"
     },
     {
         "comp_id": 524,
-        "comp_name": "University of Michigan"
+        "comp_name": "University of Michigan",
+        "favicon": "University of Michigan.png"
     },
     {
         "comp_id": 523,
-        "comp_name": "University of Nevada Press"
+        "comp_name": "University of Nevada Press",
+        "favicon": "University of Nevada Press.png"
     },
     {
         "comp_id": 275,
-        "comp_name": "University of North Carolina Press"
+        "comp_name": "University of North Carolina Press",
+        "favicon": "University of North Carolina Press.png"
     },
     {
         "comp_id": 118,
-        "comp_name": "University of Pennsylvania Press"
+        "comp_name": "University of Pennsylvania Press",
+        "favicon": "University of Pennsylvania Press.png"
     },
     {
         "comp_id": 104,
-        "comp_name": "University of Virginia Press"
+        "comp_name": "University of Virginia Press",
+        "favicon": "University of Virginia Press.png"
     },
     {
         "comp_id": 667,
-        "comp_name": "University Press of Kentucky"
+        "comp_name": "University Press of Kentucky",
+        "favicon": "University Press of Kentucky.png"
     },
     {
         "comp_id": 671,
-        "comp_name": "Vanderbilt University Press"
+        "comp_name": "Vanderbilt University Press",
+        "favicon": "Vanderbilt University Press.png"
     },
     {
         "comp_id": 47,
-        "comp_name": "Yale University Press"
+        "comp_name": "Yale University Press",
+        "favicon": "Yale University Press.png"
     }
 ]
 

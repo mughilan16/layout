@@ -3,6 +3,7 @@ import axios from "axios";
 export type Client = {
   comp_id: number,
   comp_name: string,
+  favicon: string,
 }
 
 type GetResponse = {
