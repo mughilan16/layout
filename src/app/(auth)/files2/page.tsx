@@ -78,27 +78,7 @@ function buildTree(doc: Array<{
     let trees: Array<Node> = [];
     doc.forEach(data => {
         const tree: Node = { name: "root", children: [], isFile: false };
-        console.log(data.parent_folder)
-        const path = data.parent_folder.split("/")
         let prev_head = tree;
-        path.forEach(file => {
-            let already_exist = false;
-            let index = 0;
-            prev_head.children.forEach(i => {
-                if (i.name === file) {
-                    already_exist = true;
-                } else {
-                    index++;
-                }
-            });
-            if (!already_exist) {
-                prev_head.children = [...prev_head.children, {
-                    name: file, children: [], isFile: false
-                }]
-            }
-            prev_head = prev_head.children[index]
-            console.log(prev_head.name, data.parent_folder)
-        })
         const parent_head = prev_head;
         data.files.forEach(files => {
             const file_path = files.path.replace(data.parent_folder + "/", "").split("/");
