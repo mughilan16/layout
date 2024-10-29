@@ -104,6 +104,7 @@ function buildTree(doc: Array<{
                         name: file_path[i], children: [], isFile: false
                     }];
                 }
+                prev_head = prev_head.children[prev_head.children.length - 1];
             }
         })
         trees = [...trees, tree]
