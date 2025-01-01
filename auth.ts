@@ -12,11 +12,10 @@ const authOptions: AuthOptions = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-                const user = login({email: credentials?.email!, password: credentials?.password!}).then(data => data.user);
-                console.log(user);
+                const user = await login({ email: credentials?.email!, password: credentials?.password! }).then(data => data.user);
                 //const user = { id: "1", name: "J Smith", email: "email@gmail.com" };
                 if (user) {
-                    return user
+                    return { id: user.user_id, name: user.user_name }
                 } else {
                     return null;
                 }
@@ -27,4 +26,4 @@ const authOptions: AuthOptions = {
 
 const getSession = () => getServerSession(authOptions);
 
-export {authOptions, getSession};
+export { authOptions, getSession };

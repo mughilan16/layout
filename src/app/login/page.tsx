@@ -7,10 +7,10 @@ import { signIn, useSession } from "next-auth/react";
 
 export default function Login() {
     const { data: session, status } = useSession();
+    console.log(session, status);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
-    const { mutateAsync: login } = useLogin();
     const [isLoginLoading, setIsLoginLoading] = useState(false);
 
     const clickHandler = () => {
@@ -34,45 +34,52 @@ export default function Login() {
         justifyContent: "center",
         minHeight: "100%"
     }}>
-        <Box sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            width: "300px",
-        }}>
+        {status === "unauthenticated" &&
             <Box sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.5rem",
+                gap: "1rem",
+                width: "300px",
             }}>
-                <label>Email</label>
-                <Input
-                    onChange={(e) => setEmail(e.target.value)}
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem",
+                }}>
+                    <label>Email</label>
+                    <Input
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={isLoginLoading}
+                        sx={{
+                            fontSize: "18px",
+                        }} />
+                </Box>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem",
+                }}>
+                    <label>Password</label>
+                    <Input
+                        onChange={(e) => setPassword(e.target.value)}
+                        disabled={isLoginLoading}
+                        sx={{
+                            fontSize: "18px"
+                        }} />
+                </Box>
+                <Button
+                    variant="contained"
+                    onClick={clickHandler}
                     disabled={isLoginLoading}
-                    sx={{
-                        fontSize: "18px",
-                    }} />
+                >
+                    {isLoginLoading ? "LOADING" : "LOGIN"}
+                </Button>
             </Box>
-            <Box sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-            }}>
-                <label>Password</label>
-                <Input
-                    onChange={(e) => setPassword(e.target.value)}
-                    disabled={isLoginLoading}
-                    sx={{
-                        fontSize: "18px"
-                    }} />
+        }
+        {status === "authenticated" &&
+            <Box>
+                You are logged in as {session?.user?.name}
             </Box>
-            <Button
-                variant="contained"
-                onClick={clickHandler}
-                disabled={isLoginLoading}
-            >
-                {isLoginLoading ? "LOADING" : "LOGIN"}
-            </Button>
-        </Box>
+        }
     </Box>
 }
