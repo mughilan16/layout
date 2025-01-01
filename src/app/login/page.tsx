@@ -3,8 +3,10 @@ import { Box, Button, Input } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLogin } from "@/queries/useUser";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Login() {
+    const { data: session, status } = useSession();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
@@ -14,11 +16,14 @@ export default function Login() {
     const clickHandler = () => {
         setIsLoginLoading(true);
         if (email !== "" && password !== "") {
-            login({ email, password }).then(() => {
+            signIn("credentials", {
+                email: email,
+                password: password
+            }).then(() => {
                 router.push("/");
             }).finally(() => {
                 setIsLoginLoading(false);
-            });
+            })
         };
     }
 
