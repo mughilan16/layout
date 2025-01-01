@@ -9,7 +9,7 @@ import useStore from "./store/useStore";
 
 const queryClient = new QueryClient();
 
-export default function Providers({ session, children }: { session: Session | null, children: React.ReactNode }}) {
+export default function Providers({ session, children }: { session: Session | null, children: React.ReactNode }) {
     const sidebarOpen = useStore(state => state.sidebarOpen);
     return <Box>
         <SessionProvider session={session}>
@@ -26,6 +26,7 @@ export default function Providers({ session, children }: { session: Session | nu
                     </Box>
                 </Box>
             </QueryClientProvider>
+        </SessionProvider>
     </Box>
 }
 
