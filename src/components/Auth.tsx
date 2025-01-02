@@ -1,16 +1,15 @@
 "use client"
-import { useUser } from "@/queries/useUser";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Auth({ children }: Readonly<{ children: React.ReactNode }>) {
-    const { data: user, isLoading } = useUser();
     const router = useRouter();
+    const { status } = useSession();
     useEffect(() => {
-        if (user === undefined && !isLoading) {
+        if (status === "unauthenticated") {
             router.push("/login");
         }
-    }, [user, isLoading, router]);
-    if (isLoading) return <></>
+    }, [status, router]);
     return <>{children}</>
 }

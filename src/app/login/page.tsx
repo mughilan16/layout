@@ -2,7 +2,6 @@
 import { Box, Button, Input } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useLogin } from "@/queries/useUser";
 import { signIn, useSession } from "next-auth/react";
 
 export default function Login() {
@@ -79,6 +78,7 @@ export default function Login() {
         {status === "authenticated" &&
             <Box>
                 You are logged in as {session?.user?.name}
+                <Button onClick={() => router.push("/")}> Go to Home Page </Button>
             </Box>
         }
     </Box>

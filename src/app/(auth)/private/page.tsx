@@ -1,14 +1,13 @@
 "use client"
 import { Box } from "@mui/material";
-import { useUser } from "@/queries/useUser";
+import { useSession } from "next-auth/react";
 
 export default function Private() {
-  const { data: user, isLoading } = useUser();
-  if (isLoading) return <>Loading</>
-  if (user === undefined) return <></>
+  const { data: session } = useSession();
+  if (session?.user === undefined) return <></>
   return (
     <Box>
-      Logged In as : {user.user.user_name}
+      Logged In as : {session.user.name}
     </Box>
   );
 }
