@@ -1,7 +1,7 @@
 "use client"
-import { useUser } from "@/queries/useUser";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -12,10 +12,19 @@ export default function Home() {
     }
     return (
         <main>
-            {status === "authenticated" && <Box>
-                <Button onClick={() => router.push("/private")}>
+            {status === "authenticated" && <Box sx={{display: "flex", flexDirection: "column"}}>
+                <Link href="/private">
                     Go to Private route
-                </Button>
+                </Link>
+                <Link href="/files">
+                    File Tree V1
+                </Link>
+                <Link href="/files2">
+                    File Tree V2
+                </Link>
+                <Link href="/pre-edit">
+                    Pre Edit
+                </Link>
             </Box>}
         </main>
     );

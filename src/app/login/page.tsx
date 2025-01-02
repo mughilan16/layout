@@ -25,6 +25,7 @@ export default function Login() {
             })
         };
     }
+    if (status === "loading") return <>Loading</>
 
     return <Box sx={{
         display: "flex",

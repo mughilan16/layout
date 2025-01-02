@@ -10,6 +10,7 @@ export default function Files() {
     if (files === undefined) return <></>
     const trees = buildTree(files.logs.data);
     let i = -1;
+    console.log("file")
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem", padding: "4rem", width: "100vw" }}>
             {trees.map(tree => {

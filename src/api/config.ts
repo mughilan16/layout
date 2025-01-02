@@ -1,8 +1,7 @@
-import { getToken } from "@/util/token";
 import axios from "axios";
 
 export const getConfig = () => {
-  const token = getToken();
+  const token = "";
   if (!token) {
     return undefined;
   }
@@ -14,7 +13,7 @@ export const getConfig = () => {
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: "Bearer " + token,
-    },
+    }
   }
   return axios.create(config);
 }

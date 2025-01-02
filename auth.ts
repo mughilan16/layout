@@ -12,16 +12,24 @@ const authOptions: AuthOptions = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-                const user = await login({ email: credentials?.email!, password: credentials?.password! }).then(data => data.user);
-                //const user = { id: "1", name: "J Smith", email: "email@gmail.com" };
+                const user = await login({ email: credentials?.email!, password: credentials?.password! });
                 if (user) {
-                    return { id: user.user_id, name: user.user_name }
+                    return {
+                        id: user.user.user_id,
+                        name: user.user.user_name,
+                        token: user.token,
+                        profileSetting: user.profileSetting
+                    };
                 } else {
                     return null;
                 }
             },
         })
-    ]
+    ],
+    callbacks: {
+        async jwt({ token, user }) {
+        },
+    }
 }
 
 const getSession = () => getServerSession(authOptions);

@@ -9,6 +9,7 @@ export default function Files() {
     if (isLoading) return <>Loading</>
     if (files === undefined) return <></>
     const tree = buildTree(files.logs.data);
+    console.log(tree)
     return (
         <Box>
             {tree.children.map(folder => <Folder node={folder} />)}
